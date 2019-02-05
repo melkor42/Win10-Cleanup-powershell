@@ -19,7 +19,7 @@ Set-MpPreference -DisableRealtimeMonitoring $true
 Set-ItemProperty "HKLM:\SYSTEM\CurrentControlSet\Services\xbgm" -Name "Start" -Value "4"
 
 # Disabel App recommendations
-New-Item "HKLM:\SOFTWARE\Policies\Microsoft\Windows\CloudContent" -Name "DisableWindowsConsumerFeatures" -Value "1" -Force
+Set-ItemProperty "HKLM:\SOFTWARE\Policies\Microsoft\Windows\CloudContent" DisableWindowsConsumerFeatures 1
 
 # Explorer Settings
 $key = "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced"
@@ -30,6 +30,7 @@ Set-ItemProperty $key NavPaneShowAllFolders 1
 #Taskbar remove Contacts&taskview
 Set-ItemProperty $key ShowTaskViewButton 0
 Set-ItemProperty "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced\People" PeopleBand 0
+Set-ItemProperty "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer" EnableAutoTray 0
 Stop-Process -processname explorer
 
 # Call script form same Folder
@@ -54,10 +55,18 @@ choco install firefox
 choco install pdfcreator
 choco install jre8
 choco install vcredist140
-# choco install msiafterburner 
+# choco install msiafterburner
 
-echo you might want to install 
-echo driverbooster from here 
-echo win10ShutUp from here 
-echo Firefox addons -> ublock -> foxygestures
+#Set firefox default browser
+$regKey      = "HKCU:\Software\Microsoft\Windows\Shell\Associations\UrlAssociations\{0}\UserChoice"
+$regKeyHttp  = $regKey -f 'http'
+$regKeyHttps = $regKey -f 'https'
+Set-ItemProperty $regKeyHttp  -name ProgId FirefoxURL
+Set-ItemProperty $regKeyHttps -name ProgId FirefoxURL
+
+echo "you might want to install "
+echo "win10ShutUp from here https://dl5.oo-software.com/files/ooshutup10/OOSU10.exe"
+echo "win10ShutUp Empfohlene und eingeschränkt empfohlene einstellungen anwenden"
+echo "Firefox addons -> ublock -> foxygestures"
+echo "driverbooster from here https://www.chip.de/downloads/Driver-Booster-Free_62401917.html"
 pause
