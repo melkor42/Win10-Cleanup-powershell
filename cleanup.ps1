@@ -52,7 +52,9 @@ choco install vlc -y
 choco install foxitreader -y
 choco install winrar -y
 choco install chromium -y
+choco install ublockorigin-chrome
 choco install firefox -y
+choco install ublockorigin-firefox
 choco install pdfcreator -y
 choco install jre8 -y
 choco install vcredist140 -y
