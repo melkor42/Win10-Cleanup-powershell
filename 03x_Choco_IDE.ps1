@@ -9,3 +9,6 @@ choco install yarn -y
 choco install sbt -y
 choco install maven -y
 choco install gradle -y
+choco install jetbrainstoolbox -y
+echo "install intellij over the toolbar -> easy way to keep Updates"
+pause

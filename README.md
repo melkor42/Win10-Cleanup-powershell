@@ -1,6 +1,16 @@
 ## Cleanup the annoying Win 10 default settings
 
-Read the comments in the cleanup script
+Start Scripts in Order, wait until the previos has finished.
+The x indicates an Optional script.
+Chocolatey is a Windows Package manager, it´s used to install software automaticly and helps to keep updates easy.
+Powershell update all Packages
+cup -a
+ 
+01_Cleanup_Windows - removes unnessary apps and configures windows for better usability 
+02_Remove_Taskbaricons - Removes Standard Icons nobody needs
+03_Choco_Standard - Installs Standard Sofware everyone needs
+03x_Choco_Gaming - Installs Standard Software for Gaming
+03x_Choco_IDE - Installs Standard Software for Programming
 
 
 # if the Script doesn't start maybe change the executionPolicy
