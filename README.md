@@ -5,7 +5,7 @@ The **X indicates an Optional** script.
 
 Chocolatey is a Windows Package manager, it's used to install software automatically and helps to keep updates easily.
 
-# Powershell update all Packages
+Powershell update all Packages
 **cup -a**
 
 Find more Software
