@@ -21,6 +21,9 @@ Set-ItemProperty "HKLM:\SYSTEM\CurrentControlSet\Services\xbgm" -Name "Start" -V
 # Disabel App recommendations
 Set-ItemProperty "HKLM:\SOFTWARE\Policies\Microsoft\Windows\CloudContent" DisableWindowsConsumerFeatures 1
 
+# Allow Microphone Access
+Set-ItemProperty "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore\microphone" Value Allow
+ 
 # Explorer Settings
 $key = "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced"
 Set-ItemProperty $key HideFileExt 0
@@ -34,20 +37,5 @@ Set-ItemProperty "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer" Enab
 Stop-Process -processname explorer
 
 # Call script form same Folder
-./02_Remove_Taskbaricons.ps1
+./Remove_Taskbaricons.ps1
 
-# Uninstall all unwanted apps exept those named 
-Get-AppxPackage -AllUsers | where-object {$_.name -notlike "*Xbox*"} | where-object {$_.name -notlike "*Stickynotes*"} | where-object {$_.name -notlike "*LanguageExperiencePackde-de*"}  | where-object {$_.name -notlike "*NET.*"}  | where-object {$_.name -notlike "*VCLibs.*"}  | where-object {$_.name -notlike "*MSPaint*"}  | where-object {$_.name -notlike "*Microsoft.WindowsStore*"} | where-object {$_.name -notlike "*Microsoft.WindowsCalculator*"} | where-object {$_.name -notlike "*Microsoft.Windows.Photos*"} | Remove-AppxPackage
-# Make sure they get never installed again
-Get-AppXProvisionedPackage -online | where-object {$_.name -notlike "*Xbox*"} | where-object {$_.name -notlike "*Stickynotes*"} | where-object {$_.name -notlike "*LanguageExperiencePackde-de*"}  | where-object {$_.name -notlike "*NET.*"}  | where-object {$_.name -notlike "*VCLibs.*"}  | where-object {$_.name -notlike "*MSPaint*"}  | where-object {$_.name -notlike "*Microsoft.WindowsStore*"} | where-object {$_.name -notlike "*Microsoft.WindowsCalculator*"} | where-object {$_.name -notlike "*Microsoft.Windows.Photos*"} | Remove-AppxProvisionedPackage –online 
-
-# Reinstall all Packages if you need exept those named 
-# Get-AppxPackage -AllUsers| Foreach {Add-AppxPackage -DisableDevelopmentMode -Register “$($_.InstallLocation)\AppXManifest.xml”}
-
-
-echo "you might want to install "
-echo "win10ShutUp from here https://dl5.oo-software.com/files/ooshutup10/OOSU10.exe"
-echo "win10ShutUp Empfohlene und eingeschränkt empfohlene einstellungen anwenden"
-echo "Firefox addons -> ublock -> foxygestures"
-echo "driverbooster from here https://www.chip.de/downloads/Driver-Booster-Free_62401917.html"
-pause

@@ -1,0 +1,7 @@
+# Uninstall all unwanted apps exept those named 
+Get-AppxPackage -AllUsers | where-object {$_.name -notlike "*Xbox*"} | where-object {$_.name -notlike "*Stickynotes*"} | where-object {$_.name -notlike "*LanguageExperiencePackde-de*"}  | where-object {$_.name -notlike "*NET.*"}  | where-object {$_.name -notlike "*VCLibs.*"}  | where-object {$_.name -notlike "*MSPaint*"}  | where-object {$_.name -notlike "*Microsoft.WindowsStore*"} | where-object {$_.name -notlike "*Microsoft.WindowsCalculator*"} | where-object {$_.name -notlike "*Microsoft.Windows.Photos*"} | Remove-AppxPackage
+# Make sure they get never installed again
+Get-AppXProvisionedPackage -online | where-object {$_.name -notlike "*Xbox*"} | where-object {$_.name -notlike "*Stickynotes*"} | where-object {$_.name -notlike "*LanguageExperiencePackde-de*"}  | where-object {$_.name -notlike "*NET.*"}  | where-object {$_.name -notlike "*VCLibs.*"}  | where-object {$_.name -notlike "*MSPaint*"}  | where-object {$_.name -notlike "*Microsoft.WindowsStore*"} | where-object {$_.name -notlike "*Microsoft.WindowsCalculator*"} | where-object {$_.name -notlike "*Microsoft.Windows.Photos*"} | Remove-AppxProvisionedPackage –online 
+
+# Reinstall all Packages if you need exept those named 
+# Get-AppxPackage -AllUsers| Foreach {Add-AppxPackage -DisableDevelopmentMode -Register “$($_.InstallLocation)\AppXManifest.xml”}
