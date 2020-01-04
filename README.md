@@ -11,7 +11,7 @@ Powershell update all Packages
 Find more Software: 
 https://chocolatey.org/packages
 
-**Wind10_AntiSpy - Empfohlene und eingeschraenkt empfohlene einstellungen anwenden** 
+**Wind10_AntiSpy - AntiSpyConfig.cfg importieren** 
  
  # Overview
 * 01_Cleanup_Windows - configures windows for better usability 
@@ -21,6 +21,8 @@ https://chocolatey.org/packages
 * 03x_Choco_IDE - Installs Standard Software for Programming
 * 04_Win10_AntiSpy - Shuts down the spying capabilitys of Windows
 * Remove_Taskbaricons -  Removes Standard Icons **nobody** needs (Is called automatically)
+* AntiSpyConfig - AntiSpy Configuration File
+
 
 # You might want to install manually
 driverbooster from here https://www.chip.de/downloads/Driver-Booster-Free_62401917.html
