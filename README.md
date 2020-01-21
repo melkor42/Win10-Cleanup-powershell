@@ -14,12 +14,10 @@ https://chocolatey.org/packages
 **Wind10_AntiSpy - AntiSpyConfig.cfg importieren** 
  
  # Overview
-* 01_Cleanup_Windows - configures windows for better usability 
-* 02_Uninstalls_Apps - removes unnessary apps (call multiple times if needed, still some get skipped)
-* 03_Choco_Standard - Installs Standard Sofware **everyone** needs
-* 03x_Choco_Gaming - Installs Standard Software for Gaming
-* 03x_Choco_IDE - Installs Standard Software for Programming
-* 04_Win10_AntiSpy - Shuts down the spying capabilitys of Windows
+* 01_Win10_AntiSpy - Shuts down the spying capabilitys of Windows
+* 02_Cleanup_Windows - configures windows for better usability 
+* 03_Uninstalls_Apps - removes unnessary apps (call multiple times if needed, still some get skipped)
+* 04_Choco_Standard - Installs Standard Sofware **everyone** needs
 * Remove_Taskbaricons -  Removes Standard Icons **nobody** needs (Is called automatically)
 * AntiSpyConfig - AntiSpy Configuration File
 

@@ -4,7 +4,6 @@ choco feature enable -n allowGlobalConfirmation
 
 
 choco install foxitreader -y
-choco install winrar -y
 choco install chromium -y
 choco install firefox -y
 choco install ublockorigin-firefox
@@ -12,6 +11,7 @@ choco install pdfcreator -y
 choco install jre8 -y
 choco install vcredist140 -y
 choco install k-litecodecpackfull -y
+choco install winrar -y
 #choco install malwarebytes -y
 #choco install vlc -y
 #choco install thunderbird -y
