@@ -25,6 +25,7 @@ Set-ItemProperty "HKLM:\SOFTWARE\Policies\Microsoft\Windows\CloudContent" Disabl
 Set-ItemProperty "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" SoftLandingEnabled 0
 New-Item "HKCU:\Software\Policies\Microsoft\Windows\Explorer" -Name "DisableNotificationCenter" -Type DWord -Value 1 -Force
 Set-ItemProperty "HKCU:\Software\Microsoft\Windows\CurrentVersion\PushNotifications" -Name "ToastEnabled" -Type DWord -Value 0
+Set-ItemProperty "HKCU:\Software\Microsoft\GameBar" ShowStartupPanel 0
 
 # Allow Microphone Access
 Set-ItemProperty "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore\microphone" Value Allow
