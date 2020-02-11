@@ -7,6 +7,8 @@ choco install 7zip -y
 choco install googleearthpro-y
 choco install elsterformular -y
 choco install libreoffice-fresh -y
+choco install veracrypt -y
+
 #canonc mg5100
 #dvd soft studio
 #office 2003
